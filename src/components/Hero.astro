@@ -1,0 +1,67 @@
+---
+const images = [
+  "/images/restaurant1.jpg",
+  "/images/restaurant2.jpg",
+  "/images/restaurant3.jpg",
+  "/images/restaurant4.jpg",
+];
+---
+
+<div
+  id="inicio"
+  class="relative w-full h-screen overflow-hidden opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+>
+  <!-- Overlay for better text contrast -->
+  <div class="absolute inset-0 bg-black/40 z-20 pointer-events-none"></div>
+  <h1
+    class="text-4xl md:text-7xl z-30 absolute text-white flex w-full h-full items-center justify-center text-center font-bold drop-shadow-lg"
+  >
+    Lorem<br />
+    Ipsum
+  </h1>
+  <div id="carousel" class="w-full h-full">
+    {
+      images.map((src, idx) => (
+        <img
+          src={src}
+          alt={`Slide ${idx + 1}`}
+          class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+          style={`z-index: ${10 - idx};`}
+          data-carousel-slide={idx}
+          loading="lazy"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script type="module">
+  const slides = Array.from(document.querySelectorAll("[data-carousel-slide]"));
+  let current = 0;
+  let interval = null;
+
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === idx ? "1" : "0";
+    });
+    current = idx;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function startCarousel() {
+    interval = setInterval(nextSlide, 3500);
+  }
+
+  function stopCarousel() {
+    clearInterval(interval);
+  }
+
+  // Init
+  setTimeout(() => {
+    showSlide(0);
+    startCarousel();
+  }, 0);
+</script>

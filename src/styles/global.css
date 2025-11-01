@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+a,
+button {
+    cursor: pointer;
+}
+
+.scroll-offset {
+  scroll-margin-top: 10vh;
+}

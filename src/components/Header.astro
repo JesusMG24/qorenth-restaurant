@@ -1,0 +1,71 @@
+<header
+  class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen bg-teal-600 shadow-xl fixed z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+>
+  <h1 class="font-bold text-3xl"><a href="#inicio">Restaurante</a></h1>
+  <nav class="gap-10 hidden md:flex">
+    <a href="#about"> Sobre Nosotros </a>
+    <a href="#menu"> Menú </a>
+    <a href="#ubicacion"> Ubicación </a>
+    <a href="#contacto"> Contacto </a>
+  </nav>
+  <!-- Mobile Menu Button -->
+  <button id="mobile-menu-btn" class="text-3xl font-bold md:hidden">☰</button>
+  <!-- Mobile Menu -->
+  <nav
+    id="mobile-menu"
+    class="hidden absolute top-20 left-0 w-full bg-teal-600 shadow-lg z-100"
+  >
+    <div class="flex flex-col">
+      <a
+        href="#about"
+        class="px-10 py-3 hover:bg-teal-400 cursor-pointer border-b border-teal-200 text-center"
+      >
+        Sobre Nosotros
+      </a>
+      <a
+        href="#menu"
+        class="px-10 py-3 hover:bg-teal-400 cursor-pointer border-b border-teal-200 text-center"
+      >
+        Menú
+      </a>
+      <a
+        href="#ubicacion"
+        class="px-10 py-3 hover:bg-teal-400 cursor-pointer border-b border-teal-200 text-center"
+      >
+        Ubicación
+      </a>
+      <a
+        href="#contacto"
+        class="px-10 py-3 hover:bg-teal-400 cursor-pointer text-center"
+      >
+        Contacto
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !mobileMenuBtn?.contains(e.target as Node) &&
+      !mobileMenu?.contains(e.target as Node)
+    ) {
+      mobileMenu?.classList.add("hidden");
+    }
+  });
+
+  // Close menu when clicking any link inside mobile menu
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+    });
+  });
+</script>
