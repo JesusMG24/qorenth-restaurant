@@ -1,0 +1,57 @@
+---
+let visible = true;
+---
+
+<div
+  id="page-transition"
+  class={`fixed inset-0 z-50 pointer-events-none transition-opacity duration-700 ease-in-out ${
+    visible ? "opacity-100" : "opacity-0"
+  }`}
+>
+  <!-- Base dark background -->
+  <div class="absolute inset-0 bg-black"></div>
+
+  <!-- Subtle gold shimmer overlay -->
+  <div class="absolute inset-0 bg-yellow-400/10 animate-gold-pulse"></div>
+
+  <!-- Soft floating white particles -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="w-1 h-1 bg-white/20 rounded-full animate-pulse-slow absolute top-[10%] left-[15%]"
+    >
+    </div>
+    <div
+      class="w-2 h-2 bg-white/15 rounded-full animate-pulse-slow absolute top-[25%] left-[60%]"
+    >
+    </div>
+    <div
+      class="w-1.5 h-1.5 bg-white/10 rounded-full animate-pulse-slow absolute top-[50%] left-[30%]"
+    >
+    </div>
+    <div
+      class="w-1 h-1 bg-white/15 rounded-full animate-pulse-slow absolute top-[70%] left-[80%]"
+    >
+    </div>
+    <div
+      class="w-2 h-2 bg-white/10 rounded-full animate-pulse-slow absolute top-[85%] left-[20%]"
+    >
+    </div>
+  </div>
+
+  <!-- Optional soft white light streak -->
+  <div
+    class="absolute top-0 left-[-50%] w-[200%] h-0.5 bg-white/5 rotate-25 animate-light-sweep"
+  >
+  </div>
+</div>
+
+<script>
+  // Fade out overlay after page load
+  window.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("page-transition");
+    requestAnimationFrame(() => {
+      overlay?.classList.remove("opacity-100");
+      overlay?.classList.add("opacity-0");
+    });
+  });
+</script>

@@ -1,21 +1,47 @@
 <section
   id="about"
-  class="scroll-offset p-10 xl:px-50 2xl:px-100 xl:py-20 flex flex-col gap-8 md:items-center md:justify-between opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+  class="relative overflow-hidden bg-black scroll-offset px-10 py-20 xl:px-50 2xl:px-100 xl:py-50 flex flex-col gap-8 md:items-center md:justify-between opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section uppercase text-center"
 >
-  <h2 class="text-teal-600 text-4xl font-bold mb-5">Sobre Nosotros</h2>
-  <div class="flex flex-col md:flex-row items-center gap-10">
-    <p class="text-teal-600 font-medium text-2xl md:text-xl md:w-1/2">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eleifend
-      elit sapien. Praesent porta erat non mi maximus, ut gravida sem pharetra.
-      Quisque eu lobortis enim. Ut bibendum commodo sodales. Vivamus pretium
-      arcu eget augue sodales eleifend nec in diam. Vivamus eget ligula viverra
-      sem scelerisque tristique vitae at ex.
+  <!-- Animated Dark Gradient Background -->
+  <div
+    class="absolute inset-0 -z-10 bg-linear-to-r from-black via-white/80 to-black animate-gradient-xy opacity-30 xl:hidden"
+  >
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="absolute inset-0 -z-10 pointer-events-none">
+    <div
+      class="w-1 h-1 bg-white/20 rounded-full animate-pulse-slow absolute top-[10%] left-[15%]"
+    >
+    </div>
+    <div
+      class="w-2 h-2 bg-white/10 rounded-full animate-pulse-slow absolute top-[40%] left-[60%]"
+    >
+    </div>
+    <div
+      class="w-1.5 h-1.5 bg-white/15 rounded-full animate-pulse-slow absolute top-[70%] left-[30%]"
+    >
+    </div>
+  </div>
+
+  <h2 class="text-white text-3xl font-bold mb-5">About K’i’ik</h2>
+  <div class="flex flex-col xl:flex-row gap-10 xl:items-center">
+    <p
+      class="text-white font-light md:text-xl md:px-30 lg:px-50 xl:px-0 xl:w-1/2"
+    >
+      At K’i’ik, guests are invited to indulge in a refined culinary journey set
+      within the timeless charm of Mérida’s historic center. Our restaurant
+      combines world-class gastronomy with the warmth and elegance of Yucatecan
+      architecture, creating an atmosphere that is both luxurious and welcoming.
     </p>
-    <img
-      src="/images/about.jpg"
-      loading="lazy"
-      alt="Sobre nosotros"
-      class="w-full md:w-1/2 max-w-xs md:max-w-sm h-80 md:h-70 object-cover rounded-xl shadow-xl"
-    />
+    <p
+      class="text-white font-light md:text-xl md:px-30 lg:px-50 xl:px-0 xl:w-1/2"
+    >
+      Every dish is crafted from the finest locally sourced ingredients, paired
+      with carefully selected international products to deliver flavors that are
+      both authentic and innovative. From attentive service to a thoughtfully
+      designed space, K’i’ik is dedicated to providing a complete dining
+      experience that is memorable, sophisticated, and distinctly Mérida.
+    </p>
   </div>
 </section>

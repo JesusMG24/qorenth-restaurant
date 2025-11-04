@@ -1,8 +1,9 @@
 ---
 import "../styles/global.css";
+import PageTransition from "../components/PageTransition.astro";
 ---
 
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,8 +11,14 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class="bg-black">
+    <!-- Premium Page Transition Overlay -->
+    <PageTransition />
+
+    <!-- Page content -->
     <slot />
+
+    <!-- Fade-in script for scroll animations -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const fadeEls = document.querySelectorAll(".fade-in-section");

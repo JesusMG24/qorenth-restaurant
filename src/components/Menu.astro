@@ -1,128 +1,20 @@
----
-const menuItems = [
-  { src: "/images/restaurant1.jpg", title: "Lorem" },
-  { src: "/images/restaurant2.jpg", title: "Ipsum" },
-  { src: "/images/restaurant3.jpg", title: "Dolor" },
-  { src: "/images/restaurant4.jpg", title: "Sit" },
-];
----
-
 <section
   id="menu"
-  class="scroll-offset flex flex-col gap-5 p-10 xl:py-20 items-center bg-teal-50 opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+  class="bg-black scroll-offset text-white py-30 xl:py-50 2xl:py-70 px-10 flex flex-col items-center gap-5 text-center relative uppercase"
 >
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-teal-600">
-    Menú
-  </h2>
-  <nav
-    class="flex flex-col gap-10 w-full md:flex-row md:flex-wrap md:justify-center"
+  <img
+    src="/images/menu6.webp"
+    class="absolute inset-0 w-full h-full object-cover opacity-50"
+  />
+  <h2 class="text-2xl font-bold z-5 md:text-3xl">MENU</h2>
+  <p class="z-5 md:px-30 lg:px-50 xl:px-80 md:text-xl">
+    Culinary artistry and passionate service come together in Mérida’s historic
+    heart, offering a dining experience that blends local heritage with modern
+    sophistication.
+  </p>
+  <a
+    href="/menu"
+    class="z-5 bg-white text-black font-bold text-sm py-2 px-5 hover:bg-yellow-600 hover:text-white"
+    >MENU</a
   >
-    {
-      menuItems.map((item, idx) => (
-        <button
-          type="button"
-          class="w-full md:w-7/16 xl:w-1/5 h-80 bg-gray-100 relative block rounded-xl overflow-hidden shadow-lg"
-          data-food={idx}
-        >
-          <img
-            class="w-full h-full object-cover"
-            loading="lazy"
-            src={item.src}
-            alt={item.title}
-          />
-          <h3
-            class="absolute w-full flex items-center justify-center h-32 bottom-0
-                 bg-linear-to-t from-yellow-800 to-transparent text-white text-3xl font-bold drop-shadow-lg"
-          >
-            {item.title}
-          </h3>
-        </button>
-      ))
-    }
-  </nav>
-
-  <!-- Modal -->
-  <div
-    id="food-modal"
-    class="fixed inset-0 bg-black/60 items-center justify-center z-50 hidden"
-  >
-    <div
-      class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative flex flex-col items-center"
-    >
-      <button
-        id="close-modal"
-        class="absolute top-2 right-4 text-2xl text-teal-600 font-bold"
-        >&times;</button
-      >
-      <img
-        id="modal-img"
-        src=""
-        alt=""
-        class="w-full h-56 object-cover rounded-xl my-4"
-      />
-      <h3 id="modal-title" class="text-2xl font-bold text-teal-700 mb-2"></h3>
-      <p id="modal-desc" class="text-gray-700 mb-2"></p>
-      <div id="modal-price" class="text-lg font-semibold text-teal-600"></div>
-    </div>
-  </div>
 </section>
-
-<script type="module">
-  const menuItems = [
-    {
-      src: "/images/restaurant1.jpg",
-      title: "Lorem",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis expedita voluptate ab animi, accusamus, alias totam porro similique distinctio maiores id perferendis quis? Veniam amet, quos ut nisi sint doloribus! ",
-      price: "$150",
-    },
-    {
-      src: "/images/restaurant2.jpg",
-      title: "Ipsum",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis expedita voluptate ab animi, accusamus, alias totam porro similique distinctio maiores id perferendis quis? Veniam amet, quos ut nisi sint doloribus! ",
-      price: "$140",
-    },
-    {
-      src: "/images/restaurant3.jpg",
-      title: "Dolor",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis expedita voluptate ab animi, accusamus, alias totam porro similique distinctio maiores id perferendis quis? Veniam amet, quos ut nisi sint doloribus! ",
-      price: "$160",
-    },
-    {
-      src: "/images/restaurant4.jpg",
-      title: "Sit",
-      desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis expedita voluptate ab animi, accusamus, alias totam porro similique distinctio maiores id perferendis quis? Veniam amet, quos ut nisi sint doloribus! ",
-      price: "$170",
-    },
-  ];
-
-  const modal = document.getElementById("food-modal");
-  const closeModal = document.getElementById("close-modal");
-  const modalImg = document.getElementById("modal-img");
-  const modalTitle = document.getElementById("modal-title");
-  const modalDesc = document.getElementById("modal-desc");
-  const modalPrice = document.getElementById("modal-price");
-
-  document.querySelectorAll("[data-food]").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const idx = btn.getAttribute("data-food");
-      const item = menuItems[idx];
-      modalImg.src = item.src;
-      modalImg.alt = item.title;
-      modalTitle.textContent = item.title;
-      modalDesc.textContent = item.desc;
-      modalPrice.textContent = item.price;
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    });
-  });
-
-  closeModal.addEventListener("click", () => {
-    modal.classList.remove("flex");
-    modal.classList.add("hidden");
-  });
-
-  // Optional: close modal on background click
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.classList.add("hidden");
-  });
-</script>
