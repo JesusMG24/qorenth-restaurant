@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section
   id="ubicacion"
   class="text-white scroll-offset px-10 md:px-30 lg:px-50 xl:px-80 py-50 2xl:py-70 flex flex-col gap-20 opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
@@ -7,9 +14,9 @@
     src="/images/map.png"
   />
   <div>
-    <h2 class="text-xl font-bold 2xl:text-5xl">LOCATION</h2>
+    <h2 class="text-xl font-bold 2xl:text-5xl">{t("location.title")}</h2>
     <p class="text-sm 2xl:text-3xl">
-      BASED IN THE HEART OF MÉRIDA, YUCATÁN. HISTORIC CENTER.
+      {t("location.desc")}
     </p>
   </div>
   <a
@@ -17,6 +24,6 @@
     target="_blank"
     referrerpolicy="no-referrer"
     class="bg-white text-black text-sm 2xl:text-2xl font-bold w-max py-2 px-4 hover:bg-yellow-600 hover:text-white"
-    >DIRECTIONS</a
+    >{t("location.button")}</a
   >
 </section>
