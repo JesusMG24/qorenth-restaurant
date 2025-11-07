@@ -7,22 +7,23 @@ const t = useTranslations(lang);
 
 <section
   id="about"
-  class="relative items-start overflow-hidden bg-black scroll-offset px-5 py-20 xl:px-50 2xl:px-100 xl:py-50 flex flex-col gap-8 md:items-center md:justify-between opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section text-center"
+  class="relative items-start overflow-hidden bg-black scroll-offset px-[2vw] py-20 flex flex-col lg:flex-row gap-8 md:items-center md:justify-between lg:justify-start opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section text-center"
 >
-  <h2 class="text-black text-3xl font-medium 2xl:text-5xl">
-    {t("about.title")}
-  </h2>
-  <img src="/images/restaurant4.jpg" class="object-cover w-full h-[60vw]" />
-  <div
-    class="flex text-lg text-start flex-col xl:flex-row gap-10 xl:items-center"
-  >
+  <img
+    src="/images/restaurant4.jpg"
+    class="object-cover w-full lg:w-[50vw] h-[60vw] lg:h-[50vw]"
+  />
+  <div class="flex text-lg text-start lg:w-[30vw] flex-col gap-10">
+    <h2 class="text-black text-3xl font-medium">
+      {t("about.title")}
+    </h2>
     <p
-      class="text-black font-light md:text-xl 2xl:text-3xl md:px-30 lg:px-50 xl:px-0 xl:w-1/2"
+      class="text-black font-light md:text-xl lg:text-lg md:px-30 lg:px-0 lg:mr-10"
     >
       {t("about.firstp")}
     </p>
     <p
-      class="text-black font-light md:text-xl 2xl:text-3xl md:px-30 lg:px-50 xl:px-0 xl:w-1/2"
+      class="text-black font-light md:text-xl lg:text-lg md:px-30 lg:px-0 lg:mr-10"
     >
       {t("about.secondp")}
     </p>

@@ -7,32 +7,29 @@ const t = useTranslations(lang);
 
 <section
   id="menu"
-  class="bg-white pb-5 scroll-offset text-gray-800 xl:py-50 2xl:py-70 flex flex-col items-start justify-center gap-5 text-start relative 2xl:h-350"
+  class="bg-[#efe5d8] py-20 scroll-offset text-gray-800 flex flex-col lg:flex-row items-start lg:items-center justify-center lg:justify-end gap-5 lag:gap-0 text-start relative"
 >
   <img
     src="/images/menu7.webp"
-    class="w-full h-[120vw] object-cover 2xl:hidden"
+    class="w-full h-[120vw] object-cover lg:hidden"
   />
-  <div
-    class="hidden 2xl:grid grid-cols-2 absolute inset-0 w-full h-full opacity-50"
-  >
-    <img src="/images/menu7.webp" class="w-full h-full object-cover" />
-    <div class="grid grid-rows-2">
-      <img src="/images/menu8.webp" class="w-full h-full object-cover" />
-      <img src="/images/menu9.webp" class="w-full h-full object-cover" />
-    </div>
+  <div class="flex flex-col lg:w-[40vw] xl:w-[30vw] gap-10">
+    <h2 class="text-2xl mx-5 lg:mx-0 lg:ml-10 font-bold z-5 md:text-3xl">
+      {t("menu.title")}
+    </h2>
+    <p
+      class="z-5 text-lg mx-5 lg:mx-0 md:px-30 lg:px-0 lg:ml-10 lg:mr-30 md:text-xl"
+    >
+      {t("menu.desc")}
+    </p>
+    <a
+      href="/menu"
+      class="z-5 border w-1/3 border-gray-800 font-bold text-sm py-2 px-5 mx-5 lg:mx-0 lg:ml-10 hover:bg-yellow-600 hover:border-yellow-600 hover:text-white"
+      >{t("menu.button")}</a
+    >
   </div>
-  <h2 class="text-2xl mx-5 font-bold z-5 md:text-3xl 2xl:text-5xl">
-    {t("menu.title")}
-  </h2>
-  <p
-    class="z-5 text-lg mx-5 md:px-30 lg:px-50 xl:px-80 2xl:px-100 md:text-xl 2xl:text-3xl"
-  >
-    {t("menu.desc")}
-  </p>
-  <a
-    href="/menu"
-    class="z-5 border border-gray-800 font-bold text-sm py-2 px-5 mx-5 hover:bg-yellow-600 hover:border-yellow-600 hover:text-white 2xl:text-2xl"
-    >{t("menu.button")}</a
-  >
+  <img
+    src="/images/menu7.webp"
+    class="w-1/2 h-[40vw] object-cover hidden lg:block"
+  />
 </section>
