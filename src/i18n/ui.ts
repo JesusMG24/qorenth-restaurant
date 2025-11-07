@@ -16,7 +16,11 @@ export const ui = {
 
         // Hero
         'hero.title': 'Serving Yucatán to you',
-        'hero.button': 'Reserve',
+        'hero.button': 'Book a table',
+
+        // Subscribe
+        'subscribe.title': 'Sign up for reservation updates & news from K’i’ik',
+        'subscribe.button': 'Subscribe',
 
         // About
         'about.title': 'About K’i’ik',
@@ -31,7 +35,12 @@ export const ui = {
         // Location
         'location.title': 'LOCATION',
         'location.desc': 'BASED IN THE HEART OF MÉRIDA, YUCATÁN. HISTORIC CENTER.',
-        'location.button': 'DIRECTIONS'
+        'location.button': 'DIRECTIONS',
+
+        // Footer
+        'footer.address': 'Historic Center, Mérida, Yucatán',
+        'footer.hours': 'Monday to Saturday: 12:00 - 23:00',
+        'footer.copyright': 'All rights reserved.',
 
     },
     es: {
@@ -43,7 +52,11 @@ export const ui = {
 
         // Hero
         'hero.title': 'Sirviéndote Yucatán',
-        'hero.button': 'Reservar',
+        'hero.button': 'Reserva una mesa',
+
+        // Subscribe
+        'subscribe.title': 'Suscríbase para recibir novedades y actualizaciones de reservas de K’i’ik',
+        'subscribe.button': 'Suscribirse',
 
         // About
         'about.title': 'Acerca de K’i’ik',
@@ -58,6 +71,12 @@ export const ui = {
         // Location
         'location.title': 'UBICACIÓN',
         'location.desc': 'EN EL CORAZÓN DE MÉRIDA, YUCATÁN. CENTRO HISTÓRICO.',
-        'location.button': 'CÓMO LLEGAR'
+        'location.button': 'CÓMO LLEGAR',
+
+        // Footer
+        'footer.address': 'Centro Histórico, Mérida, Yucatán',
+        'footer.hours': 'Lunes a sábado: 12:00 - 23:00',
+        'footer.copyright': 'Todos los derechos reservados.',
+
     }
 } as const;

@@ -14,7 +14,9 @@ const lang = getLangFromUrl(Astro.url);
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body class="bg-black">
+  <body
+    class=`font-serif ${Astro.url.pathname === "/" || Astro.url.pathname === "/es" ? "bg-white" : Astro.url.pathname.startsWith("/menu") || Astro.url.pathname.startsWith("/es/menu") ? "bg-black" : "bg-black"}`
+  >
     <!-- Premium Page Transition Overlay -->
     <PageTransition />
 

@@ -1,16 +1,20 @@
 ---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
 <footer
-  class="p-10 border-t border-white/20 bg-black flex flex-col gap-5 items-center text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+  class=`p-10 border-t border-white/20 flex flex-col gap-5 items-center text-black opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section ${Astro.url.pathname === "/" || Astro.url.pathname === "/es" ? "bg-white" : Astro.url.pathname.startsWith("/menu") || Astro.url.pathname.startsWith("/es/menu") ? "bg-black text-white" : "bg-black text-white"}`
 >
   <h2 class="text-2xl font-bold">K’i’ik</h2>
   <address class="not-italic text-center font-bold text-sm">
-    [Restaurant Address], Historic Center, Mérida, Yucatán<br />
-    Monday to Saturday: [Opening Time] - [Closing Time]
+    {t("footer.address")}<br />
+    {t("footer.hours")}
   </address>
   <div class="text-center text-sm mt-10">
-    © {year} K’i’ik — All rights reserved.
+    © {year} K’i’ik — {t("footer.copyright")}
   </div>
 </footer>

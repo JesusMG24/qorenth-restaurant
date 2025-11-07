@@ -11,7 +11,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
 ---
 
 <header
-  class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen bg-black shadow-xl fixed z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+  class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen absolute z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
 >
   <h1 class="font-bold text-3xl">
     <a href={lang === "es" ? "/es" : "/"}>K’i’ik</a>
@@ -44,24 +44,24 @@ const switchLabel = lang === "es" ? "EN" : "ES";
   <!-- Mobile Menu -->
   <nav
     id="mobile-menu"
-    class="absolute top-20 left-0 w-full bg-black shadow-lg z-100 overflow-hidden max-h-0 transition-all duration-500"
+    class=`absolute top-20 left-0 w-full z-100 overflow-hidden max-h-0 transition-all duration-500 ${Astro.url.pathname === "/" || Astro.url.pathname === "/es" ? "bg-transparent" : Astro.url.pathname.startsWith("/menu") || Astro.url.pathname.startsWith("/es/menu") ? "bg-black" : "bg-black"}`
   >
     <div class="flex flex-col">
       <a
         href="/#about"
-        class="px-10 py-3 hover:bg-white hover:text-black cursor-pointer border-b border-white/40 text-center"
+        class="px-10 py-3 hover:bg-white/40 hover:text-black cursor-pointer border-b border-white/40 text-center"
       >
         {t("header.about")}
       </a>
       <a
         href="/menu"
-        class="px-10 py-3 hover:bg-white hover:text-black cursor-pointer border-b border-white/40 text-center"
+        class="px-10 py-3 hover:bg-white/40 hover:text-black cursor-pointer border-b border-white/40 text-center"
       >
         {t("header.menu")}
       </a>
       <a
         href="/#ubicacion"
-        class="px-10 py-3 hover:bg-white hover:text-black cursor-pointer border-b border-white/40 text-center"
+        class="px-10 py-3 hover:bg-white/40 hover:text-black cursor-pointer border-b border-white/40 text-center"
       >
         {t("header.location")}
       </a>
@@ -69,7 +69,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
       <!-- Language Switcher (Mobile) -->
       <a
         href={switchUrl}
-        class="px-10 py-3 hover:bg-white hover:text-black cursor-pointer text-center"
+        class="px-10 py-3 hover:bg-white/40 hover:text-black cursor-pointer text-center"
       >
         {switchLabel}
       </a>
