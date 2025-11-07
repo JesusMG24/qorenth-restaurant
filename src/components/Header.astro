@@ -13,16 +13,18 @@ const switchLabel = lang === "es" ? "EN" : "ES";
 <header
   class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen absolute z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
 >
+  <!-- Logo -->
   <h1 class="font-bold text-3xl">
     <a href={lang === "es" ? "/es" : "/"}>K’i’ik</a>
   </h1>
 
+  <!-- Desktop Navigation -->
   <nav class="gap-10 hidden md:flex items-center">
     <a href="/#about" class="hover:text-yellow-600">{t("header.about")}</a>
     <a href="/menu" class="hover:text-yellow-600">{t("header.menu")}</a>
-    <a href="/#ubicacion" class="hover:text-yellow-600">
-      {t("header.location")}
-    </a>
+    <a href="/#ubicacion" class="hover:text-yellow-600"
+      >{t("header.location")}</a
+    >
 
     <!-- Language Switcher -->
     <a
@@ -44,7 +46,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
   <!-- Mobile Menu -->
   <nav
     id="mobile-menu"
-    class=`absolute top-20 left-0 w-full z-100 overflow-hidden max-h-0 transition-all duration-500 ${Astro.url.pathname === "/" || Astro.url.pathname === "/es" ? "bg-transparent" : Astro.url.pathname.startsWith("/menu") || Astro.url.pathname.startsWith("/es/menu") ? "bg-black" : "bg-black"}`
+    class="absolute top-20 left-0 w-full z-100 overflow-hidden max-h-0 transition-all duration-500"
   >
     <div class="flex flex-col">
       <a
@@ -78,16 +80,23 @@ const switchLabel = lang === "es" ? "EN" : "ES";
 </header>
 
 <script>
-  const mobileMenuBtn = document.getElementById(
-    "mobile-menu-btn"
-  ) as HTMLButtonElement | null;
-  const mobileMenu = document.getElementById(
-    "mobile-menu"
-  ) as HTMLElement | null;
+  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
 
   if (mobileMenuBtn && mobileMenu) {
+    // Set background based on current URL
+    if (
+      window.location.pathname === "/" ||
+      window.location.pathname === "/es"
+    ) {
+      mobileMenu.classList.add("bg-transparent");
+    } else {
+      mobileMenu.classList.add("bg-black");
+    }
+
     let menuOpen = false;
 
+    // Toggle menu
     mobileMenuBtn.addEventListener("click", () => {
       menuOpen = !menuOpen;
       if (menuOpen) {
@@ -99,9 +108,9 @@ const switchLabel = lang === "es" ? "EN" : "ES";
       }
     });
 
-    document.addEventListener("click", (e: MouseEvent) => {
-      const target = e.target as Node; // ✅ Explicit cast
-
+    // Close menu if clicking outside
+    document.addEventListener("click", (e) => {
+      const target = e.target as Node;
       if (
         !mobileMenuBtn.contains(target) &&
         !mobileMenu.contains(target) &&
@@ -113,6 +122,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
       }
     });
 
+    // Close menu when clicking a link
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         menuOpen = false;
