@@ -12,7 +12,7 @@ const lang = getLangFromUrl(Astro.url);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>K’i’ik</title>
   </head>
   <body
     class=`font-serif ${Astro.url.pathname === "/" || Astro.url.pathname === "/es" ? "bg-white" : Astro.url.pathname.startsWith("/menu") || Astro.url.pathname.startsWith("/es/menu") ? "bg-black" : "bg-black"}`

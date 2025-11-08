@@ -11,7 +11,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
 ---
 
 <header
-  class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen absolute z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section"
+  class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen absolute z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section bg-black/50"
 >
   <!-- Logo -->
   <h1 class="font-bold text-3xl">
@@ -89,9 +89,9 @@ const switchLabel = lang === "es" ? "EN" : "ES";
       window.location.pathname === "/" ||
       window.location.pathname === "/es"
     ) {
-      mobileMenu.classList.add("bg-transparent");
+      mobileMenu.classList.add("bg-black/50");
     } else {
-      mobileMenu.classList.add("bg-black");
+      mobileMenu.classList.add("bg-black/50");
     }
 
     let menuOpen = false;
