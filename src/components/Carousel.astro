@@ -1,0 +1,21 @@
+---
+import type { CarouselImage } from '../data/carousel';
+import { images } from '../data/carousel';
+---
+
+<div class="relative w-full lg:w-1/2 max-w-4xl mx-auto overflow-hidden">
+    <div id="carousel-wrapper" class="flex transition-transform duration-500">
+        {images.map((image: CarouselImage) => (
+            <div class="min-w-full relative">
+                <img src={image.src} alt={image.alt} class="w-full aspect-square object-cover rounded-xl" />
+            </div>
+        ))}
+    </div>
+    <button id="prev" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 hover:bg-black py-2 px-4 rounded-full">‹</button>
+    <button id="next" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 hover:bg-black py-2 px-4 rounded-full">›</button>
+</div>
+
+<script>
+  import { initCarousel } from '../scripts/initCarousel.ts';
+  initCarousel('carousel-wrapper', 'prev', 'next');
+</script>
