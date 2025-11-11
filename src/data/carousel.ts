@@ -5,11 +5,11 @@ export interface CarouselImage {
 
 export const images: CarouselImage[] = [
   {
-    src: "/images/menu3.webp",
+    src: "/images/menu1.webp",
     alt: "Delicious Dish 1",
   },
   {
-    src: "/images/menu4.webp",
+    src: "/images/menu3.webp",
     alt: "Delicious Dish 2",
   },
   {

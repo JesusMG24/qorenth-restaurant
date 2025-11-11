@@ -7,40 +7,31 @@ const t = useTranslations(lang);
 
 <section
   id="ubicacion"
-  class="px-[5vw] py-[20vw] flex flex-col lg:flex-row gap-[10vw] items-center relative"
+  class="flex flex-col md:flex-row lg:flex-row gap-[15vw] sm:gap-[10vw] md:gap-0 items-center relative"
 >
-  <div class="w-full lg:w-1/2">
+  <div class="w-full md:w-1/2 lg:w-1/2">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4430.557902399945!2d-89.62349594563548!3d20.966963337253482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1762627160289!5m2!1ses-419!2smx"
-      class="aspect-square w-full rounded-xl"
+      class="aspect-square sm:aspect-auto sm:h-[60vw] md:h-screen w-full"
       style="border:0;"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
-  <div class="flex flex-col gap-[10vw] lg:gap-[5vw] items-center lg:items-start lg:w-1/2">
+  <div class="flex flex-col px-[5vw] gap-[5vw] md:gap-[2vw] mb-[15vw] sm:mb-[10vw] md:mb-0 items-start lg:items-start md:w-1/2 lg:w-1/2">
     <div class="flex flex-col gap-[2vw]">
+      <h2 class="text-3xl md:text-4xl font-bold uppercase">{t("location.title")}</h2>
       <p class="font-medium">{t("location.desc")}</p>
     </div>
-    <p class="text-lg 2xl:w-2/3">
+    <p class="text-lg md:text-base">
       {t("location.content")}
     </p>
     <a
       href="https://maps.app.goo.gl/ywv2EPXq3GsJg11r8"
       target="_blank"
       referrerpolicy="no-referrer"
-      class="font-bold bg-black hover:bg-yellow-600 text-white hover:text-black w-max py-2 px-4 rounded-lg text-lg"
+      class="font-bold bg-white hover:bg-black hover:text-white border md:border-2 w-max py-2 px-4 text-sm uppercase"
       >{t("location.button")}</a
     >
   </div>
-  <video
-    class="absolute inset-0 w-full h-full object-cover -z-10 invert"
-    autoplay
-    muted
-    loop
-    playsinline
-  >
-    <source src="/videos/background2.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
 </section>

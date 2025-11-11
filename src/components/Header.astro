@@ -11,7 +11,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
 ---
 
 <header
-  class="flex h-[10vh] justify-between px-10 md:justify-around items-center w-screen absolute z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section bg-black/50"
+  class="flex fixed h-[10vh] justify-between px-10 md:justify-around items-center w-screen z-110 text-white opacity-0 translate-y-4 transition-all duration-700 will-change-transform fade-in-section bg-black/50"
 >
   <!-- Logo -->
   <h1 class="font-bold text-3xl">
@@ -46,7 +46,7 @@ const switchLabel = lang === "es" ? "EN" : "ES";
   <!-- Mobile Menu -->
   <nav
     id="mobile-menu"
-    class="absolute top-20 left-0 w-full z-100 overflow-hidden max-h-0 transition-all duration-500"
+    class="absolute top-19 left-0 w-full z-100 overflow-hidden max-h-0 transition-all duration-500"
   >
     <div class="flex flex-col">
       <a

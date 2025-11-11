@@ -7,27 +7,17 @@ const t = useTranslations(lang);
 
 <section
   id="about"
-  class="flex flex-col lg:flex-row px-[5vw] py-[20vw] gap-[10vw] relative items-center"
+  class="flex bg-black text-white flex-col md:flex-row-reverse gap-[15vw] sm:gap-[10vw] md:gap-0 relative items-center"
 >
-  <div class="w-full lg:w-1/2">
+  <div class="w-full md:w-1/2 lg:w-1/2">
     <img
-      src="/images/menu1.webp"
-      class="rounded-xl inset-0 w-full aspect-square object-cover"
+      src="/images/restaurant4.jpg"
+      class="inset-0 w-full sm:h-[60vw] md:h-screen aspect-square sm:aspect-auto object-cover"
     />
   </div>
-  <div class="flex flex-col gap-[10vw] lg:gap-[5vw] text-lg lg:w-1/2">
-    <h2 class="text-3xl font-medium">{t("about.title")}</h2>
-    <p class="2xl:w-2/3">{t("about.firstp")}</p>
-    <p class="2xl:w-2/3">{t("about.secondp")}</p>
+  <div class="flex flex-col gap-[5vw] 2xl:gap-[2vw] mb-[15vw] sm:mb-[10vw] md:mb-0 px-[5vw] text-lg md:w-1/2 lg:w-1/2">
+    <h2 class="text-3xl md:text-4xl font-bold uppercase">{t("about.title")}</h2>
+    <p class="md:text-base">{t("about.firstp")}</p>
+    <p class="md:text-base">{t("about.secondp")}</p>
   </div>
-  <video
-    class="absolute inset-0 w-full h-full object-cover -z-10 invert"
-    autoplay
-    muted
-    loop
-    playsinline
-  >
-    <source src="/videos/background2.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
 </section>
